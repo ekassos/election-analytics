@@ -29,14 +29,6 @@ In terms of the current political climate, we make the following predictions
 
 State | 2016 Change | 2012 Change | 2008 Change | Times change flipped
 ------- | ------ | --------- | --------- | -------
-Alabama | -3.16 | -0.33 | 2.01 
-Alaska | -1.07 | 3.75 | 2.16
-Arizona | 2.72 | -0.30 | 0.96
-Arkansas | -2.13 | -1.98 | -5.24
-California | 4.26 | -0.41 | 7.24
-Colorado | -0.06 | -1.80 | 6.92
-Connecticut | -1.63 | -2.55 | 6.04
-State | 2008 Change | 2012 Change | 2016 Change | Times flipped
 Alabama | 2.01 | -0.33 | -3.16 | 1
 Alaska | 2.16 | 3.75 | -1.07 | 1
 Arizona | 0.96 | -0.30 | 2.72 | 2
