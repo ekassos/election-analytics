@@ -19,7 +19,7 @@ To calculate the swing percentage we use the following formula:
 Working with the data from the popular vote results for both parties on the elections of 1980 to 2016, we generated the following map:
 
 ![Swing States Historical Data](/PV_swing_states_historical.png)
-<sub>Please note that because of the nature of the formula we use to calculate the change in percentage <\sub>
+<sup>Please note that because of the nature of the formula we use to calculate the change in percentage </sup>
 
 In the map, a deeper blue color of a state denotes that the Democratic party saw substantial increases in the percentage of the popular vote they secured against their Republican contenders compared to the previous election. On the other hand, a deep red color points to a strong Republican resurgence in the state's popular vote results compared to the percentage scored four years before.
 
