@@ -85,10 +85,11 @@ West Virginia | -0.19 | -7.00 | -8.49 | 0
 Wyoming | 3.75 | -4.60 | -4.54 | 1
 
 ## **Does turnout affect the results?**
-
+Let's continue with the analysis of turnout and the share of popular vote results between the two main parties. Using the data from [Dave Leip’s Atlas of U.S. Presidential Elections](https://uselectionatlas.org/RESULTS/), we compiled a CSV file for the election turnout statistics for elections beginning in 1942. We created the following plot to examine the relationship between those two measures:
+![Popular Vote and Turnout Comparisson](/population-turnout.png)
+We see that, especially in the last few decades, a rise in turnout generally gives Democrats an advantage in the popular vote, with 2008 being a prime example of this trend. On the other hand, we see that in election years like 1956, 1972, and 1984, when voter turnout is considerably low, It would be particulaty exciting to research the effect of youth's [(Binstock, 2000)](https://watermark.silverchair.com/18.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAq8wggKrBgkqhkiG9w0BBwagggKcMIICmAIBADCCApEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMzJfHOwXcz0asHOCHAgEQgIICYnkSqzLtZj_nMsYMTWSW8Bd9RCV3YviZJKYJm9L-I_JzM8-2xH-X-zbvil-vOnAcMzwcv3jDNqh8SUgkoKVvPLdI0PKR0FIdpVMtzi6jqf4l0YqCdB4zDbnqTVPHnxD-dNCcZOfbzKbzOij_42nftnWslf-BpmGis-ja2wW-i1hd8f9xwwbHoai0YljDbCPz-dl9To9uumhamKOQnyuqgNWqx4JLejqhx0OAClktQ_HoCMUkURNNqmIl28pLrlIuCmRF2x0h2bX74f4uPyGQnc5d8QpQX_th3rz_a3sy7ZEnWENhGh1yXZVrZikGV4Qsq7t-Bm7ibf33LdTOb9IZ1US8j5J6zY5_tP9gNLlzzrjiL0c3QEBagsPy1ETf1MdEFDkeeGMXM5j53IW48o59Tlri3PrcHegLVOfDGAv9DjkqHX5tLzelO3EL-D_WNCGxjdoJ5xwRQUCT0HieIGlgcwZW33VofRBhNwnEz_AGjC3ybsjrvbfE9foDGbBQqjBwa4ZQSeQS7SK0YDb_6b1m6OAsu46_mhG1z9u8aUzktK16xY_1_sadkw1Oe6nC6ik6EbdI4pKW79WGgN8keL5Plhr9srhvotNbYP7KIub33HGpTD9P40UVwkwuOZE5nafRy_vU5UTxcjNHdYZOIqjObP9HyiAghIveGh78ERwoOmKctnBYd8ZzlC7nTgbmytnfrrIeHdN3trqGzXflQPylmLrrHm0w_D-MsobxrSdVRTwnhRY-sAhUr6svA7YxxZfjeygB7lVJlzCL9hAjABN1ZB4v6VHsu0vUEUFXBMpyAZA9RD8).
 
 ## **Current electoral vote prediction**
-![Popular Vote and Turnout Comparisson](/population-turnout.png)
 
 
 ## **Onwards**
