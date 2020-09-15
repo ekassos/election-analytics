@@ -18,6 +18,9 @@ To calculate the swing percentage we use the following formula:
 
 Working with the data from 
 
+![Swing States Historical Data](/swing-states-graphic.png)
+
+
 ## **Does turnout affect the results?**
 
 ## **Current electoral vote prediction**
