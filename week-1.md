@@ -5,7 +5,7 @@ permalink: /week-1.html
 # **Week 1 - Preliminaries**
 
 ## Introduction
-Before we take a deep dive into election result predictions, we thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. Thus, we take a look at swing states, and how we can . We finish up with a preliminary election prediction statistic, calculate electoral votes, and try to interpreyt results based on our previous analysis.
+Before we take a deep dive into election result predictions, we thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. Thus, we take a look at swing states, and how we can identify those based on historical and current trends. We finish up with a preliminary election prediction statistic, calculate electoral votes, and try to interpreyt results based on our previous analysis.
 
 ## Uncovering Swing States
 
