@@ -18,7 +18,7 @@ To calculate the swing percentage we use the following formula:
 
 Working with the data from 
 
-![Swing States Historical Data](/swing-states-graphic.png)
+![Swing States Historical Data](/PV_swing_states_historical.png)
 
 
 ## **Does turnout affect the results?**
