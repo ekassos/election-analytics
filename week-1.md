@@ -5,11 +5,11 @@ permalink: /week-1.html
 # **Week 1 - Preliminaries**
 #### ***Monday, September 14, 2020***
 
->“To know your future you must know your past”
+> “To know your future, you must know your past”
 ― George Santayana
 
 ## **Introduction**
-Before taking a deep dive into election result predictions, I thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. This week, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote and electoral college results. We finish up with a preliminary election prediction statistics, calculate electoral votes, and interpret results based on our previous analysis.
+Before taking a deep dive into election result predictions, I thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. This week, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote results.
 
 ## **Uncovering Swing States**
 ### _Using the historical approach_
@@ -24,16 +24,16 @@ Working with the data from the popular vote results for both parties on the elec
 ![Swing States Historical Data](/PV_swing_states_historical.png)
 <sup>Please note that because of the nature of the formula we use to calculate the change in percentage of the popular vote, we cannot create a map for the year 1980, but use it to create the map for the year 1984.</sup>
 
-In the map, a deeper blue color of a state denotes that the Democratic party saw substantial increases in the percentage of the popular vote they secured against their Republican contenders compared to the previous election. On the other hand, a deep red color points to a strong Republican resurgence in the state's popular vote results compared to the percentage scored four years before.
+In the map, a deeper blue color of a state denotes that the Democratic party saw substantial increases in the percentage of the popular vote they secured against their Republican contenders compared to the previous election. On the other hand, a deep red color points to a strong Republican resurgence in the state’s popular vote results compared to the percentage scored four years before.
 
-One of the first things we can point out in the popular vote distribution is the sudden surge of Democratic share of the popular vote in almsot all states around the United States. This is quite understandable based on the 2008 "Obama effect," who secured 52.93% of the popular vote, and a landslide 67.84% (365/538) of the electoral votes. We observe similar results when a "change of guard" happens between the two main competing parties. An interesting exception, however, is the 1988, when George H. W. Bush was elected: the whole country turned blue, as a result of the stark decline of the electoral vote share (79.18% vs. 97.58%) and popular vote share (53.37% vs. 58.77%) that Bush secured compared to the lanslide victory of Ronald Reagan 4 years before.
+One of the first things we can point out in the popular vote distribution is the sudden surge of the Democratic share of the popular vote in almost all states around the United States. This is quite understandable based on the 2008 “Obama effect,” who secured 52.93% of the popular vote and a landslide 67.84% (365/538) of the electoral votes. We observe similar results when a “change of guard” happens between the two main competing parties. An interesting exception, however, is the 1988, when George H. W. Bush was elected: the whole country turned blue, as a result of the stark decline of the electoral vote share (79.18% vs. 97.58%) and popular vote share (53.37% vs. 58.77%) that Bush secured compared to the lanslide victory of Ronald Reagan 4 years before.
 
-In terms of the current political climate, we take a look at the times the rate of change of the Democratic share of popular votes in a state changed sign (Democratic share of popular votes started decreasing after increasing, or started increasing after decreasing in the previous election). We present the results of this analysis in the following table, and highlight specific states we are going to discuss in greater detail in boldface.
+In terms of the current political climate, we take a look at the times the rate of change of the Democratic share of popular votes in a state changed sign (Democratic share of popular votes started decreasing after increasing, or started increasing after declining in the previous election). We present the results of this analysis in the following table, and highlight specific states we are going to discuss in greater detail in boldface.
 
 State | 2016 Change | 2012 Change | 2008 Change | Times change rate<br>sign flipped
  :---: |  :---: |  :---: |  :---: |  :---: 
 Alabama | 2.01 | -0.33 | -3.16 | 1
-**Alaska** | 2.16 | 3.75 | -1.07 | 1
+Alaska | 2.16 | 3.75 | -1.07 | 1
 **Arizona** | 0.96 | -0.30 | 2.72 | 2
 Arkansas | -5.24 | -1.98 | -2.13 | 0
 California | 7.24 | -0.41 | 4.26 | 2
@@ -43,7 +43,7 @@ Delaware | 8.81 | -3.19 | -3.45 | 1
 District of Columbia | 2.88 | -0.81 | 3.11 | 2
 **Florida** | 3.94 | -0.98 | -1.06 | 1
 **Georgia** | 5.73 | -1.33 | 1.30 | 2
-**Hawaii** | 18.59 | -1.29 | -4.26 | 1
+Hawaii | 18.59 | -1.29 | -4.26 | 1
 Idaho | 6.30 | -3.40 | -1.89 | 1
 Illinois | 7.53 | -4.16 | 0.44 | 2
 Indiana | 10.95 | -5.72 | -4.92 | 1
@@ -84,13 +84,14 @@ West Virginia | -0.19 | -7.00 | -8.49 | 0
 **Wisconsin** | 6.86 | -3.59 | -3.87 | 1
 Wyoming | 3.75 | -4.60 | -4.54 | 1
 
+We can define swing states in many different ways. One definition could be a state in which the rate of change in the Democratic share of the popular vote between elections changes signs in every pair of election cycles (e.g., Georgia, Arizona, Texas, Utah). The rationale behind this definition is that abrupt changes in the Democratic share of the popular vote between elections are usually caused by ideological shifts of undecided voters that swing the popular votes, the state’s electoral college votes, and potentially the whole election.
+
+On the other hand, we could define states as swing states when the sum of the rates of change over the last three pairs of election cycles is close to zero (e.g. Florida, Maine, Michigan, New Hampshire, North Carolina, Pennsylvania, South Carolina, Wisconsin). This definition takes into account the general historical development of election results in each state. A sum value close to zero shows that even though there might be some changes in the share of the popular vote between elections, the overall change in the share of the popular vote is quite stable. This creates a trend of a supposed equilibrium that could influence the results of future elections. In either case, our analysis identifies the “Big Four” states correctly, which might ultimately decide the outcome of the election [WSJ, 2020](https://www.washingtonpost.com/politics/the-2020-electoral-map-could-be-the-smallest-in-years-heres-why/2019/08/31/61d4bc9a-c9a9-11e9-a1fe-ca46e8d573c0_story.html).
+
 ## **Does turnout affect the results?**
-Let's continue with the analysis of turnout and the share of popular vote results between the two main parties. Using the data from [Dave Leip’s Atlas of U.S. Presidential Elections](https://uselectionatlas.org/RESULTS/), we compiled a [CSV file](/turnout.csv) for the election turnout statistics for elections beginning in 1942. We created the following plot to examine the relationship between those two measures:
+Let’s continue with the analysis of turnout and the share of popular vote results between the two main parties. Using the data from [Dave Leip’s Atlas of U.S. Presidential Elections](https://uselectionatlas.org/RESULTS/), we compiled a [CSV file](/turnout.csv) for the election turnout statistics for elections beginning in 1942. We created the following plot to examine the relationship between those two measures:
 ![Popular Vote and Turnout Comparisson](/population-turnout.png)
-We see that, especially in the last few decades, a rise in turnout generally gives Democrats an advantage in the popular vote, with 2008 being a prime example of this trend. On the other hand, we see that in election years like 1956, 1972, and 1984, when voter turnout is considerably low, It would be particulaty exciting to research the effect of youth's [(Binstock, 2000)](https://watermark.silverchair.com/18.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAq8wggKrBgkqhkiG9w0BBwagggKcMIICmAIBADCCApEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMzJfHOwXcz0asHOCHAgEQgIICYnkSqzLtZj_nMsYMTWSW8Bd9RCV3YviZJKYJm9L-I_JzM8-2xH-X-zbvil-vOnAcMzwcv3jDNqh8SUgkoKVvPLdI0PKR0FIdpVMtzi6jqf4l0YqCdB4zDbnqTVPHnxD-dNCcZOfbzKbzOij_42nftnWslf-BpmGis-ja2wW-i1hd8f9xwwbHoai0YljDbCPz-dl9To9uumhamKOQnyuqgNWqx4JLejqhx0OAClktQ_HoCMUkURNNqmIl28pLrlIuCmRF2x0h2bX74f4uPyGQnc5d8QpQX_th3rz_a3sy7ZEnWENhGh1yXZVrZikGV4Qsq7t-Bm7ibf33LdTOb9IZ1US8j5J6zY5_tP9gNLlzzrjiL0c3QEBagsPy1ETf1MdEFDkeeGMXM5j53IW48o59Tlri3PrcHegLVOfDGAv9DjkqHX5tLzelO3EL-D_WNCGxjdoJ5xwRQUCT0HieIGlgcwZW33VofRBhNwnEz_AGjC3ybsjrvbfE9foDGbBQqjBwa4ZQSeQS7SK0YDb_6b1m6OAsu46_mhG1z9u8aUzktK16xY_1_sadkw1Oe6nC6ik6EbdI4pKW79WGgN8keL5Plhr9srhvotNbYP7KIub33HGpTD9P40UVwkwuOZE5nafRy_vU5UTxcjNHdYZOIqjObP9HyiAghIveGh78ERwoOmKctnBYd8ZzlC7nTgbmytnfrrIeHdN3trqGzXflQPylmLrrHm0w_D-MsobxrSdVRTwnhRY-sAhUr6svA7YxxZfjeygB7lVJlzCL9hAjABN1ZB4v6VHsu0vUEUFXBMpyAZA9RD8).
-
-## **Current electoral vote prediction**
-
+We see that, especially in the last few decades, a rise in turnout generally gives Democrats an advantage in the popular vote, with 2008 being a prime example of this trend. On the other hand, we see that in election years like 1956, 1972, and 1984, when voter turnout is considerably low, the Republican popular vote share soars. It would be particularly exciting to research the effect of youth’s turnout rates in election results, as the turnout of older generations usually is stable [(Binstock, 2000)](https://watermark.silverchair.com/18.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAq8wggKrBgkqhkiG9w0BBwagggKcMIICmAIBADCCApEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMzJfHOwXcz0asHOCHAgEQgIICYnkSqzLtZj_nMsYMTWSW8Bd9RCV3YviZJKYJm9L-I_JzM8-2xH-X-zbvil-vOnAcMzwcv3jDNqh8SUgkoKVvPLdI0PKR0FIdpVMtzi6jqf4l0YqCdB4zDbnqTVPHnxD-dNCcZOfbzKbzOij_42nftnWslf-BpmGis-ja2wW-i1hd8f9xwwbHoai0YljDbCPz-dl9To9uumhamKOQnyuqgNWqx4JLejqhx0OAClktQ_HoCMUkURNNqmIl28pLrlIuCmRF2x0h2bX74f4uPyGQnc5d8QpQX_th3rz_a3sy7ZEnWENhGh1yXZVrZikGV4Qsq7t-Bm7ibf33LdTOb9IZ1US8j5J6zY5_tP9gNLlzzrjiL0c3QEBagsPy1ETf1MdEFDkeeGMXM5j53IW48o59Tlri3PrcHegLVOfDGAv9DjkqHX5tLzelO3EL-D_WNCGxjdoJ5xwRQUCT0HieIGlgcwZW33VofRBhNwnEz_AGjC3ybsjrvbfE9foDGbBQqjBwa4ZQSeQS7SK0YDb_6b1m6OAsu46_mhG1z9u8aUzktK16xY_1_sadkw1Oe6nC6ik6EbdI4pKW79WGgN8keL5Plhr9srhvotNbYP7KIub33HGpTD9P40UVwkwuOZE5nafRy_vU5UTxcjNHdYZOIqjObP9HyiAghIveGh78ERwoOmKctnBYd8ZzlC7nTgbmytnfrrIeHdN3trqGzXflQPylmLrrHm0w_D-MsobxrSdVRTwnhRY-sAhUr6svA7YxxZfjeygB7lVJlzCL9hAjABN1ZB4v6VHsu0vUEUFXBMpyAZA9RD8).
 
 ## **Onwards**
-As we are looking forward to another week, and coming closer to election day, we will start devising and implementing our own election prediction models, while critically reviewing models of other researchers and political scientists.
+As we are looking forward to another week and coming closer to election day, we will start devising and implementing our own election prediction models while critically reviewing other researchers and political scientists’ models.
