@@ -14,8 +14,9 @@ We begin by taking a looking at the differences between the popular vote percent
 
 To calculate the swing percentage we use the following formula:
 
-<img src="https://render.githubusercontent.com/render/math?math=\frac{D_{i}}{D_{i} %2B R_{i}} - \frac{D_{i-4}}{D_{i-4} %2B R_{i-4}}">
+<img src="https://render.githubusercontent.com/render/math?math=\frac{D_{i}}{D_{i} %2B R_{i}} - \frac{D_{i-4}}{D_{i-4} %2B R_{i-4}}">, where <img src="https://render.githubusercontent.com/render/math?math=D_{i}"> and <img src="https://render.githubusercontent.com/render/math?math=R_{i}"> are the popular vote percentages that the Democratic and Republican candidate received in year i respectively, and <img src="https://render.githubusercontent.com/render/math?math=D_{i-4}"> and <img src="https://render.githubusercontent.com/render/math?math=R_{i-4}"> are the popular vote percentages that the Democratic and Republican candidate received in previous election cycle respectively.
 
+Working with the data from 
 
 ## **Does turnout affect the results?**
 
