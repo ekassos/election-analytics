@@ -6,10 +6,9 @@ permalink: /week-1.html
 #### ***Monday, September 14, 2020***
 
 ## **Introduction**
-Before taking a deep dive into election result predictions, we thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. Thus, we look at swing states and how we can identify those based on historical and current trends. We finish up with a preliminary election prediction statistic, calculate electoral votes, and interpret results based on our previous analysis.
+Before taking a deep dive into election result predictions, we thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. Thus, we look at swing states and how we can identify those based on historical trends, and investigate the effect of . We finish up with a preliminary election prediction statistics, calculate electoral votes, and interpret results based on our previous analysis.
 
 ## **Uncovering Swing States**
-
 ### _Using the historical approach_
 We begin by looking at the differences between the popular vote percentage that Democrats received in a given election and the popular vote percentage that the party received in the previous election cycle. We use the two-party (Republican and Democrat) popular vote sum to calculate the percentages, as none of the independent or third-party candidates have secured any electoral votes in the period 1984-2016 we are considering ([Dave Leip’s Atlas of U.S. Presidential Elections](https://uselectionatlas.org/RESULTS/)). We will spend some time exploring the impact of the third-party vote (i.e., in the 2000 presidential election in Florida) in a future blog post.
 
