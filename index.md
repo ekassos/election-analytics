@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+# Week 1: Uncovering Swing States
+
 
 You can use the [editor on GitHub](https://github.com/ekassos/election-analytics/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
