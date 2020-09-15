@@ -23,6 +23,10 @@ Working with the data from the popular vote results for both parties on the elec
 
 In the map, a deeper blue color of a state denotes that the Democratic party saw substantial increases in the percentage of the popular vote they secured against their Republican contenders compared to the previous election. On the other hand, a deep red color points to a strong Republican resurgence in the state's popular vote results compared to the percentage scored four years before.
 
+One of the first things we can point out in the popular vote distribution is the sudden surge of Democratic share of the popular vote in almsot all states around the United States. This is quite understandable based on the 2008 "Obama effect," who secured 52.93% of the popular vote, and a landslide 67.84% (365/538) of the electoral votes. We observe similar results when a "change of guard" happens between the two main competing parties. An interesting exception, however, is the 1988, when George H. W. Bush was elected: the whole country turned blue, as a result of the stark decline of the electoral vote share (79.18% vs. 97.58%) and popular vote share (53.37% vs. 58.77%) that Bush secured compared to the lanslide victory of Ronald Reagan 4 years before.
+
+In terms of the current political climate, we 
+
 ## **Does turnout affect the results?**
 
 ## **Current electoral vote prediction**
