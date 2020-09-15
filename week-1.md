@@ -9,7 +9,7 @@ permalink: /week-1.html
 ― George Santayana
 
 ## **Introduction**
-Before taking a deep dive into election result predictions, we thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. Thus, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote and electoral college results. We finish up with a preliminary election prediction statistics, calculate electoral votes, and interpret results based on our previous analysis.
+Before taking a deep dive into election result predictions, I thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. This week, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote and electoral college results. We finish up with a preliminary election prediction statistics, calculate electoral votes, and interpret results based on our previous analysis.
 
 ## **Uncovering Swing States**
 ### _Using the historical approach_
@@ -86,4 +86,8 @@ Wyoming | 3.75 | -4.60 | -4.54 | 1
 
 ## **Does turnout affect the results?**
 
+
 ## **Current electoral vote prediction**
+
+## **Onwards**
+As we are looking forward to another week, and coming closer to election day, we will start devising and implementing our own election prediction models, while critically reviewing models of other researchers and political scientists.
