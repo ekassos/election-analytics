@@ -28,7 +28,6 @@ One of the first things we can point out in the popular vote distribution is the
 In terms of the current political climate, we take a look at the times the change in the Democratic 
 
 State | 2016 Change | 2012 Change | 2008 Change | Times change rate<br>sign flipped
-------- | ------ | --------- | --------- | -------
  :---: |  :---: |  :---: |  :---: |  :---: 
 Alabama | 2.01 | -0.33 | -3.16 | 1
 Alaska | 2.16 | 3.75 | -1.07 | 1
