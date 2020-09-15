@@ -88,6 +88,8 @@ Wyoming | 3.75 | -4.60 | -4.54 | 1
 
 
 ## **Current electoral vote prediction**
+![Popular Vote and Turnout Comparisson](/population-turnout.png)
+
 
 ## **Onwards**
 As we are looking forward to another week, and coming closer to election day, we will start devising and implementing our own election prediction models, while critically reviewing models of other researchers and political scientists.
