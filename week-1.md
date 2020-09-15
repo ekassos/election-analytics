@@ -5,6 +5,9 @@ permalink: /week-1.html
 # **Week 1 - Preliminaries**
 #### ***Monday, September 14, 2020***
 
+>“To know your future you must know your past”
+― George Santayana
+
 ## **Introduction**
 Before taking a deep dive into election result predictions, we thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. Thus, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote and electoral college results. We finish up with a preliminary election prediction statistics, calculate electoral votes, and interpret results based on our previous analysis.
 
