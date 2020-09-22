@@ -2,96 +2,46 @@
 permalink: /week-2.html
 ---
 
-# **Week 2 - Preliminaries**
+# **Week 2 - Pennies and Quarters**
 #### ***Monday, September 22, 2020***
 
 > “To preserve our independence we must not let our rulers load us with perpetual debt. We must make our election between economy and liberty or profusion and servitude.”
 ― Thomas Jefferson
 
 ## **Introduction**
-Before taking a deep dive into election result predictions, I thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. This week, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote results.
+This week, we start creating our election prediction model by comparing economy data with popular vote results.
 
-## **Uncovering Swing States**
-### _Using the historical approach_
-We begin by looking at the differences between the popular vote percentage that Democrats received in a given election and the popular vote percentage that the party received in the previous election cycle. We use the two-party (Republican and Democrat) popular vote sum to calculate the percentages, as none of the independent or third-party candidates have secured any electoral votes in the period 1984-2016 we are considering ([Dave Leip’s Atlas of U.S. Presidential Elections](https://uselectionatlas.org/RESULTS/)). We will spend some time exploring the impact of the third-party vote (i.e., in the 2000 presidential election in Florida) in a future blog post.
+## **Quarter Economics: Predicting the election result based on GDP growth**
+### _Selecting the right quarter_
+We begin by looking at the differences between election prediction models that use the percent growth of the Gross Domestic Product in the second or third quarters to predict the popular vote result. To do so, we use linear regression to create a predictive model based on the second quarter (Q2) and third quarter (Q3) GDP quarterly growth percentages. In our updated GDP quarterly growth [CSV file](/updated_econ.csv), we used [estimates](https://fortune.com/2020/08/06/us-gdp-growth-record-rebound-q3-2020-election/) from Morgan Stanley, IHS Markit, S&P Global Ratings, and the Federal Reserve Bank of Atlanta to calculate the average estimated Q3 GDP growth in 2020 as 20.35%.
 
-To calculate the swing percentage we use the following formula:
+Working with the data on the updated GDP quarterly growth and the popular election vote results, we generate the following plots:
+![Q2_plot](/Q2.png)
+![Q3_plot](/Q3.png)
 
-<img src="https://render.githubusercontent.com/render/math?math=\frac{D_{i}}{D_{i} %2B R_{i}} - \frac{D_{i-4}}{D_{i-4} %2B R_{i-4}}">, where <img src="https://render.githubusercontent.com/render/math?math=D_{i}"> and <img src="https://render.githubusercontent.com/render/math?math=R_{i}"> are the popular vote percentages that the Democratic and Republican candidate received in year i respectively, and <img src="https://render.githubusercontent.com/render/math?math=D_{i-4}"> and <img src="https://render.githubusercontent.com/render/math?math=R_{i-4}"> are the popular vote percentages that the Democratic and Republican candidate received in previous election cycle respectively.
+To understand which model preditcs the actual election results better, we then compare the two model fits by plotting the in-sample error via residuals, which captures the difference between each observed and predicted value.
+![Q2_compare](/Q2-compare.png)
+![Q3_compare](/Q3-compare.png)
 
-Working with the data from the popular vote results for both parties on the elections of 1980 to 2016, we generated the following map:
+We observe that the predicted data points fit better with the line of the actual data on our third quarter GDP growth prediction model. We decide to take a more detailed look, by plotting a histogram of the frequences of the magnitudes of the residuals. 
 
-![Swing States Historical Data](/PV_swing_states_historical.png)
-<sup>Please note that because of the nature of the formula we use to calculate the change in percentage of the popular vote, we cannot create a map for the year 1980, but use it to create the map for the year 1984.</sup>
+![Q2_histogram](/Q2-hist.png)
+![Q3_histogram](/Q3-hist.png)
 
-In the map, a deeper blue color of a state denotes that the Democratic party saw substantial increases in the percentage of the popular vote they secured against their Republican contenders compared to the previous election. On the other hand, a deep red color points to a strong Republican resurgence in the state’s popular vote results compared to the percentage scored four years before.
+Once again, we observe a wider spread of the residual magnitudes on our Q2 GDP growth prediction model, which means that the Q2 GDP growth prediction model that we devised fits the true data in a better way, pointing us to select that model instead. We perform one final model test, cross validation. In this test, we withold a random subset of the sample, fit the predictive model on the rest of sample, and afterward evaluate its predictive performance on the held-out observations. We chose this model testing method against one out-of-sample testing (withholding some observation before fitting and see how well the model predicts the true value for the held-out observation), as it involves repeatedly evaluating performance against many randomly held-out “out-of-sample” datasets. This provides for a more accurate and reliable model testing method. In our examples, we run 1000 signle cross-validation tests and report the mean out-of-sample residual in each case. Finally, we plot the following histograms that present the spread of mean residuals for each of the cross validation of the two predictive models.
+![Q2_mean](/Q2-mean.png)
+![Q3_mean](/Q3-mean.png)
 
-One of the first things we can point out in the popular vote distribution is the sudden surge of the Democratic share of the popular vote in almost all states around the United States. This is quite understandable based on the 2008 “Obama effect,” who secured 52.93% of the popular vote and a landslide 67.84% (365/538) of the electoral votes. We observe similar results when a “change of guard” happens between the two main competing parties. An interesting exception, however, is the 1988, when George H. W. Bush was elected: the whole country turned blue, as a result of the stark decline of the electoral vote share (79.18% vs. 97.58%) and popular vote share (53.37% vs. 58.77%) that Bush secured compared to the lanslide victory of Ronald Reagan 4 years before.
+The spread of the mean residuals confirms what we were expecting: ***the thrid quarter GDP quartely growth prediction model is a better predictor for the incumbent party's popular vote election results***, compared to the second quarter GDP quartely growth prediction model.
 
-In terms of the current political climate, we take a look at the times the rate of change of the Democratic share of popular votes in a state changed sign (Democratic share of popular votes started decreasing after increasing, or started increasing after declining in the previous election). We present the results of this analysis in the following table, and highlight specific states we are going to discuss in greater detail in boldface.
+### The actual prediction
+Using the third quarter GDP quartely growth prediction model for the incumbent party's popular vote election results, we get the following linear predictive model: `Y(X) = 4.9X + 49.269`, where Y(X) represents the incumbent party's popular vote election result prediction, and X represents the third quarter GDP quartely growth percentage in the year of the election. Using that model, we predict that the Rupublican's national popular vote election result will be `43.08184%` this Novemeber, predicting a win of the Democrats, securing `56.91816%` of the total national popular vote (assuming a two-party popular vote share). This prediction seems much more plausible than the `21.25928%` Republican national popular vote election result that the second quarter GDP quartely growth model prediction.
 
-State | 2016 Change | 2012 Change | 2008 Change | Times change rate<br>sign flipped
- :---: |  :---: |  :---: |  :---: |  :---: 
-Alabama | 2.01 | -0.33 | -3.16 | 1
-Alaska | 2.16 | 3.75 | -1.07 | 1
-**Arizona** | 0.96 | -0.30 | 2.72 | 2
-Arkansas | -5.24 | -1.98 | -2.13 | 0
-California | 7.24 | -0.41 | 4.26 | 2
-Colorado | 6.92 | -1.80 | -0.06 | 1
-Connecticut | 6.04 | -2.55 | -1.63 | 1
-Delaware | 8.81 | -3.19 | -3.45 | 1
-District of Columbia | 2.88 | -0.81 | 3.11 | 2
-**Florida** | 3.94 | -0.98 | -1.06 | 1
-**Georgia** | 5.73 | -1.33 | 1.30 | 2
-Hawaii | 18.59 | -1.29 | -4.26 | 1
-Idaho | 6.30 | -3.40 | -1.89 | 1
-Illinois | 7.53 | -4.16 | 0.44 | 2
-Indiana | 10.95 | -5.72 | -4.92 | 1
-Iowa | 5.19 | -1.89 | -8.02 | 1
-Kansas | 5.25 | -3.50 | 0.00 | 2
-Kentucky | 1.77 | -3.31 | -4.13 | 1
-Louisiana | -2.13 | 0.71 | -1.42 | 2
-**Maine** | 4.25 | -0.97 | -6.26 | 1
-Maryland | 6.36 | 0.39 | 0.69 | 0
-Massachusetts | 0.45 | -1.41 | 2.87 | 2
-**Michigan** | 6.65 | -3.57 | -4.92 | 1
-Minnesota | 3.47 | -1.29 | -3.11 | 1
-Mississippi | 2.86 | 0.84 | -3.29 | 1
-Missouri | 3.55 | -4.71 | -5.04 | 1
-Montana | 9.33 | -5.86 | -4.08 | 1
-Nebraska | 9.24 | -3.52 | -2.42 | 1
-Nevada | 7.70 | -2.98 | -2.11 | 1
-**New Hampshire** | 4.18 | -2.03 | -2.64 | 1
-New Jersey | 4.49 | 1.09 | -1.67 | 1
-New Mexico | 8.07 | -2.37 | -0.64 | 1
-New York | 5.93 | 0.28 | -2.63 | 1
-**North Carolina** | 6.41 | -1.20 | -0.87 | 1
-North Dakota | 9.50 | -5.70 | -9.70 | 1
-Ohio | 3.39 | -0.82 | -5.78 | 1
-Oklahoma | -0.07 | -1.13 | -2.53 | 0
-Oregon | 6.31 | -2.14 | -0.12 | 1
-**Pennsylvania** | 3.97 | -2.50 | -3.11 | 1
-Rhode Island | 3.62 | -0.18 | -5.71 | 1
-**South Carolina** | 4.09 | -0.76 | -2.15 | 1
-South Dakota | 6.62 | -4.92 | -6.75 | 1
-Tennessee | -0.45 | -2.72 | -3.27 | 0
-**Texas** | 5.57 | -2.07 | 3.29 | 2
-**Utah** | 8.82 | -10.10 | 12.24 | 2
-Vermont | 8.60 | -0.65 | -3.06 | 1
-Virginia | 7.32 | -1.22 | 0.86 | 2
-Washington | 5.11 | -1.12 | 1.16 | 2
-West Virginia | -0.19 | -7.00 | -8.49 | 0
-**Wisconsin** | 6.86 | -3.59 | -3.87 | 1
-Wyoming | 3.75 | -4.60 | -4.54 | 1
+## **All politics is local: How do unemployment rates in states impact popular vote results?**
+As we are working on a larger project of creating individual popular vote prediction models for each state, we will post a mid-week update with all our results.
 
-We can define swing states in many different ways. One definition could be a state in which the rate of change in the Democratic share of the popular vote between elections changes signs in every pair of election cycles (e.g., Georgia, Arizona, Texas, Utah). The rationale behind this definition is that abrupt changes in the Democratic share of the popular vote between elections are usually caused by ideological shifts of undecided voters that swing the popular votes, the state’s electoral college votes, and potentially the whole election.
-
-On the other hand, we could define states as swing states when the sum of the rates of change over the last three pairs of election cycles is close to zero (e.g. Florida, Maine, Michigan, New Hampshire, North Carolina, Pennsylvania, South Carolina, Wisconsin). This definition takes into account the general historical development of election results in each state. A sum value close to zero shows that even though there might be some changes in the share of the popular vote between elections, the overall change in the share of the popular vote is quite stable. This creates a trend of a supposed equilibrium that could influence the results of future elections. In either case, our analysis identifies the “Big Four” states correctly, which might ultimately decide the outcome of the election [WSJ, 2020](https://www.washingtonpost.com/politics/the-2020-electoral-map-could-be-the-smallest-in-years-heres-why/2019/08/31/61d4bc9a-c9a9-11e9-a1fe-ca46e8d573c0_story.html).
-
-## **Does turnout affect the results?**
-Let’s continue with the analysis of turnout and the share of popular vote results between the two main parties. Using the data from [Dave Leip’s Atlas of U.S. Presidential Elections](https://uselectionatlas.org/RESULTS/), we compiled a [CSV file](/turnout.csv) for the election turnout statistics for elections beginning in 1942. We created the following plot to examine the relationship between those two measures:
-![Popular Vote and Turnout Comparisson](/population-turnout.png)
-We see that, especially in the last few decades, a rise in turnout generally gives Democrats an advantage in the popular vote, with 2008 being a prime example of this trend. On the other hand, we see that in election years like 1956, 1972, and 1984, when voter turnout is considerably low, the Republican popular vote share soars. It would be particularly exciting to research the effect of youth’s turnout rates in election results, as the turnout of older generations usually is stable [(Binstock, 2000)](https://watermark.silverchair.com/18.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAq8wggKrBgkqhkiG9w0BBwagggKcMIICmAIBADCCApEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMzJfHOwXcz0asHOCHAgEQgIICYnkSqzLtZj_nMsYMTWSW8Bd9RCV3YviZJKYJm9L-I_JzM8-2xH-X-zbvil-vOnAcMzwcv3jDNqh8SUgkoKVvPLdI0PKR0FIdpVMtzi6jqf4l0YqCdB4zDbnqTVPHnxD-dNCcZOfbzKbzOij_42nftnWslf-BpmGis-ja2wW-i1hd8f9xwwbHoai0YljDbCPz-dl9To9uumhamKOQnyuqgNWqx4JLejqhx0OAClktQ_HoCMUkURNNqmIl28pLrlIuCmRF2x0h2bX74f4uPyGQnc5d8QpQX_th3rz_a3sy7ZEnWENhGh1yXZVrZikGV4Qsq7t-Bm7ibf33LdTOb9IZ1US8j5J6zY5_tP9gNLlzzrjiL0c3QEBagsPy1ETf1MdEFDkeeGMXM5j53IW48o59Tlri3PrcHegLVOfDGAv9DjkqHX5tLzelO3EL-D_WNCGxjdoJ5xwRQUCT0HieIGlgcwZW33VofRBhNwnEz_AGjC3ybsjrvbfE9foDGbBQqjBwa4ZQSeQS7SK0YDb_6b1m6OAsu46_mhG1z9u8aUzktK16xY_1_sadkw1Oe6nC6ik6EbdI4pKW79WGgN8keL5Plhr9srhvotNbYP7KIub33HGpTD9P40UVwkwuOZE5nafRy_vU5UTxcjNHdYZOIqjObP9HyiAghIveGh78ERwoOmKctnBYd8ZzlC7nTgbmytnfrrIeHdN3trqGzXflQPylmLrrHm0w_D-MsobxrSdVRTwnhRY-sAhUr6svA7YxxZfjeygB7lVJlzCL9hAjABN1ZB4v6VHsu0vUEUFXBMpyAZA9RD8).
+## **Look under the hood**
+Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-2.zip).
 
 ## **Onwards**
-As we are looking forward to another week and coming closer to election day, we will start devising and implementing our own election prediction models while critically reviewing other researchers and political scientists’ models.
+As we are looking forward to another week and coming closer to election day, we will start revising and updating our own election prediction models while critically reviewing other researchers and political scientists’ models. 
