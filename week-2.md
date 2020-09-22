@@ -25,8 +25,11 @@ To understand which model preditcs the actual election results better, we then c
 
 We observe that the predicted data points fit better with the line of the actual data on our third quarter GDP growth prediction model. We decide to take a more detailed look, by plotting a histogram of the frequences of the magnitudes of the residuals. 
 
-![Q2_histogram](/Q2-hist.png)
-![Q3_histogram](/Q3-hist.png)
+![Q2_histogram](/Q2-hist.png) ![Q3_histogram](/Q3-hist.png)
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](/Q2-hist.png)          |  ![](/Q3-hist.png)
 
 Once again, we observe a wider spread of the residual magnitudes on our Q2 GDP growth prediction model, which means that the Q2 GDP growth prediction model that we devised fits the true data in a better way, pointing us to select that model instead. We perform one final model test, cross validation. In this test, we withold a random subset of the sample, fit the predictive model on the rest of sample, and afterward evaluate its predictive performance on the held-out observations. We chose this model testing method against one out-of-sample testing (withholding some observation before fitting and see how well the model predicts the true value for the held-out observation), as it involves repeatedly evaluating performance against many randomly held-out “out-of-sample” datasets. This provides for a more accurate and reliable model testing method. In our examples, we run 1000 signle cross-validation tests and report the mean out-of-sample residual in each case. Finally, we plot the following histograms that present the spread of mean residuals for each of the cross validation of the two predictive models.
 ![Q2_mean](/Q2-mean.png)
