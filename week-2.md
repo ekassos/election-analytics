@@ -23,17 +23,23 @@ To understand which model predicts the actual election results better, we then c
 ![Q2_compare](/Q2-compare.png)
 ![Q3_compare](/Q3-compare.png)
 
+Second Quarter             |  Third Quarter
+:-------------------------:|:-------------------------:
+![Q2_compare](/Q2-compare.png)  |  ![Q3_compare](/Q3-compare.png)
+
 We observe that the predicted data points fit better with the line of the actual data on our third-quarter GDP growth prediction model. We decide to take a more detailed look by plotting a histogram of the frequency of the magnitudes of the residuals. 
 
-![Q2_histogram](/Q2-hist.png) ![Q3_histogram](/Q3-hist.png)
-
-Solarized dark             |  Solarized Ocean
+Second Quarter             |  Third Quarter
 :-------------------------:|:-------------------------:
 ![Q2_histogram](/Q2-hist.png)  |  ![Q3_histogram](/Q3-hist.png)
 
 Once again, we observe a wider spread of the residual magnitudes on our Q2 GDP growth prediction model, which means that the Q2 GDP growth prediction model that we devised fits the true data in a better way, pointing us to select that model instead. We perform one final model test, cross-validation. In this test, we withhold a random subset of the sample, fit the predictive model on the rest of sample, and evaluate its predictive performance on the held-out observations. We chose this model testing method against one out-of-sample testing (withholding one observation before fitting and see how well the model predicts the true value for the held-out observation), as it involves repeatedly evaluating performance against many randomly held-out “out-of-sample” datasets. This approach provides for a more accurate and reliable model testing method. In our examples, we run 1000 single cross-validation tests and report the mean out-of-sample residual in each case. Finally, we plot the following histograms that present the spread of mean residuals for each of the cross-validation of the two predictive models.
 ![Q2_mean](/Q2-mean.png)
 ![Q3_mean](/Q3-mean.png)
+
+Second Quarter             |  Third Quarter
+:-------------------------:|:-------------------------:
+![Q2_mean](/Q2-mean.png)  |  ![Q3_mean](/Q3-mean.png)
 
 The spread of the mean residuals confirms what we were expecting: ***the third quarter GDP quarterly growth prediction model is a better predictor for the incumbent party’s popular vote election results***, compared to the second quarter GDP quarterly growth prediction model.
 
