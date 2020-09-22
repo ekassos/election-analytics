@@ -2,11 +2,11 @@
 permalink: /week-2.html
 ---
 
-# **Week 1 - Preliminaries**
-#### ***Monday, September 14, 2020***
+# **Week 2 - Preliminaries**
+#### ***Monday, September 22, 2020***
 
-> “To know your future, you must know your past”
-― George Santayana
+> “To preserve our independence we must not let our rulers load us with perpetual debt. We must make our election between economy and liberty or profusion and servitude.”
+― Thomas Jefferson
 
 ## **Introduction**
 Before taking a deep dive into election result predictions, I thought it would be of great interest to investigate some of the parallel universes, or contributing factors if you would like, of election night results. This week, we look at swing states and how we can identify those based on historical trends, and investigate the effect of turnout to the popular vote results.
