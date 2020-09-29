@@ -16,15 +16,16 @@ This week, we make a new prediction model by comparing FiveThirtyEight's [electi
 
 ![FTE](/538.png)
 
+### _Building a model based on poll ratings_
+
 ![equation](/equation.png)
 
 ![eq](/eq.png)
 
-![Dems](/dem.png)
+## **Prediction Results**
+Using the data provided from the 2020 election polls, and our model formula for scaling the popular vote share of each poll result to match the rating provided by FiveThirtyEight, we find the following popular vote prediction:
 
-![Reps](/rep.png)
-
-
+**Biden: `49.17621%`, Trump: `41.94046%`**
 
 ## **Look under the hood**
 Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-3.zip).
