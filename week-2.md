@@ -42,9 +42,6 @@ The spread of the mean residuals confirms what we were expecting: ***the third q
 ### The actual prediction
 Using the third quarter GDP quarterly growth prediction model for the incumbent party's popular vote election results, we get the following linear predictive model: `Y(X) = 4.9X + 49.269`, where Y(X) represents the incumbent party's popular vote election result prediction, and X represents the third quarter GDP quarterly growth percentage in the year of the election. Using that model, we predict that the Republican's national popular vote election result will be `43.08184%` this November, predicting a win of the Democrats, securing `56.91816%` of the total national popular vote (assuming a two-party popular vote share). This prediction seems much more plausible than the `21.25928%` Republican national popular vote election result that the second-quarter GDP quarterly growth model prediction.
 
-## **All politics is local: How do unemployment rates in states impact popular vote results?**
-As we are working on a larger project of creating individual popular vote prediction models for each state, we will post a mid-week update with all our results.
-
 ## **Look under the hood**
 Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-2.zip).
 
