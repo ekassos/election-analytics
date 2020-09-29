@@ -18,9 +18,14 @@ This week, we make a new prediction model by comparing FiveThirtyEight's [electi
 
 ### _Building a model based on poll ratings_
 
+For each of the poll ratings, we use the following scoring function, where `x` represents each one of the poll results:
 ![equation](/equation.png)
 
+To normalize all election poll results and calculate the "contibution" of each result to the final calculated popular vote share of a candidate, we devide each score over the the 
 ![eq](/eq.png)
+
+Finally, the popular vote share calculated for a specific candidate is:
+![eq](/eq2.png)
 
 ## **Prediction Results**
 Using the data provided from the 2020 election polls, and our model formula for scaling the popular vote share of each poll result to match the rating provided by FiveThirtyEight, we find the following popular vote prediction:
