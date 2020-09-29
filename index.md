@@ -4,3 +4,6 @@ _Before taking a deep dive into election result predictions, I thought it would 
 
 ## [Week 2: Pennies and Quarters](https://ekassos.github.io/election-analytics/week-2.html)
 _This week, we start creating our election prediction model by comparing economy data with popular vote results. In particular, we will make and compare a national popular vote prediction model based on the second or third-quarter GDP growth percentage of election years._
+
+## [Week 3 - Grading Election Polls](https://ekassos.github.io/election-analytics/week-3.html)
+_This week, we make a new prediction model by comparing FiveThirtyEight's [election poll rankings](https://github.com/fivethirtyeight/data/tree/master/pollster-ratings). In particular, we will make a national popular vote prediction model based on the scaled results of each poll, influenced by FiveThirtyEight's election poll rankings._
