@@ -36,9 +36,8 @@ Once again, we graph the difference between the true and predicted two-party vot
 
 We explored our models using ‘leave-one-out (cross) validation’ to decide which model is best to move forward with for our final election prediction. The method uses all but one of the election years to estimate the model and its performance is subsequently tested on the one election year left out. We performed a leave-one-out validation for each of the election years, and got the following results for the mean error rate (difference between true and predicted popular vote share):
 
-1 | 2 | 3 |
-:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/state_plot2.png" width="300%"> | <img src="/state_plot3.png" width="300%">  | <img src="/state_plot4.png" width="300%">  |
+:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/state_plot5.png" width="300%"> | <img src="/state_plot6.png" width="300%">  | <img src="/state_plot7.png" width="300%">  |
 <img src="/state_plot8.png" width="300%"> | <img src="/state_plot9.png" width="300%">  | <img src="/state_plot10.png" width="300%">  |
 <img src="/state_plot11.png" width="300%"> | <img src="/state_plot12.png" width="300%">  | <img src="/state_plot13.png" width="300%">  |
