@@ -23,6 +23,7 @@ To improve our probibilistic model, and account for any model outliers, instead 
 Finally, we are simulating a distribution of election results, specifically calculating Biden's win or loss (if negative) margin in each state, and then attributing the electoral votes of each state to the winner of that state. Note: absent specific polling results of each of the electoral districts in Maine and Nebraska, we assume that the general state vote will reflect on the distribution of those electoral votes, and follow the usual "winner takes all" electoral college vote distribution model.
 
 We generate histograms of Biden's win or loss (if negative) margin in each state: 
+
 <img src="/state_plot2.png" width="300%"> | <img src="/state_plot3.png" width="300%">  | <img src="/state_plot4.png" width="300%">  |
 :-------------------------:|:-------------------------:|:-------------------------:
 <img src="/state_plot5.png" width="300%"> | <img src="/state_plot6.png" width="300%">  | <img src="/state_plot7.png" width="300%">  |
