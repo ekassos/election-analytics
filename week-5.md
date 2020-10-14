@@ -9,33 +9,20 @@ permalink: /week-5.html
 ― Louis Brandeis, Former Associate Justice of the Supreme Court of the United States
 
 ## **Introduction**
-This week, we make a new linear regression prediction model based on the GDP Quarter Growth we saw in Week 2, and the net approval rating for each incumbent party candidate and use those to predict the popular vote share.
+This week, we take a different approach than the normal linear regression model fitting approach we have been following for the last few weeks. Instead, we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the voter-eligible population (VEP) turning out to vote Democrat, modeled as a binomial process.
 
 ## **Simulating a distribution of election results**
-The vote total for any particular candidate in any election has a fixed set of
-possible values: 0 − VEP, where VEP is the voter eligible population for the
-election in question. Let’s say we’re interested in the popular vote total for
-Democrat candidates in some state s, DemPVs. Thus, the election outcome for
-Democrats in state s is some draw of voters from the voter-eligible population
-(VEPs) turning out to vote Democrat. We call this process of draws from a population (often called successes from a number of trials) a binomial process.
+The vote total for any particular candidate in the presidential election has a fixed set of possible values: 0 − VEP, where VEP is the voter eligible population for the presidential election in question. Let’s say we’re interested in the popular vote total for the Democratic nominee in some state s. Thus, the election outcome for Democrats in state s is some draw of voters from the voter-eligible population (VEPs) turning out to vote Democrat. We call this process of draws from a population (often called successes from a number of trials) a binomial process.
 
+The core probabilistic phenomena driving a binomial process is whether or not a single voter, denoted by i, will turn out and vote for the party in question. Let’s call this individual voter probability in state s. The question we can ask is: what, then, is the probability of n voters voting for the democratic presidential nominee in this state? It turns out that this question can be answered by setting up a distribution that follows the Binomial distribution.
 
-### _Model Evaluation_
+### _Model Implementation_
 
-To begin with, we evaluated our model by comparing the predicted popular vote share for the incumbent party’s candidate with the true share in that election year. We observe, unfortunately, that the predicted and true results very vastly.
+To improve our probibilistic model, and account for any model outliers, instead of a calculating the probability for a single Democratic voter showing up tot he polls and voting for the Democratic presidential nominee, or the single expected number of Democratic voters from the population, we predict a distribution of Democratic voter draws from the respective binomial process on that population.
 
-![equation](/graph1.png)
+Finally, we are simulating a distribution of election results, specifically calculating Biden's win or loss (if negative) margin in each state, and then attributing the electoral votes of each state to the winner of that state. Note: absent specific polling results of each of the electoral districts in Maine and Nebraska, we assume that the general state vote will reflect on the distribution of those electoral votes, and follow the usual "winner takes all" electoral college vote distribution model.
 
-As we were not satisfied with the predictive power of our model, we turn to the two-party popular vote share. Using the process described above, we obtained the following predictive model for the two-party popular vote share:
-
-![equation](/eqw4.png)
-
-Once again, we graph the difference between the true and predicted two-party vote share of the candidate nominated by the incumbent party. It is interesting to observe how well the model predicts the last few elections, as signified by the recent election year points being extremely close to the diagonal “perfect fit” line. However, we observe earlier years are not well-predicted by our model. 
-
-![equation](/graph2.png)
-
-We explored our models using ‘leave-one-out (cross) validation’ to decide which model is best to move forward with for our final election prediction. The method uses all but one of the election years to estimate the model and its performance is subsequently tested on the one election year left out. We performed a leave-one-out validation for each of the election years, and got the following results for the mean error rate (difference between true and predicted popular vote share):
-
+We generate histograms of Biden's win or loss (if negative) margin in each state: 
 <img src="/state_plot2.png" width="300%"> | <img src="/state_plot3.png" width="300%">  | <img src="/state_plot4.png" width="300%">  |
 :-------------------------:|:-------------------------:|:-------------------------:
 <img src="/state_plot5.png" width="300%"> | <img src="/state_plot6.png" width="300%">  | <img src="/state_plot7.png" width="300%">  |
@@ -56,10 +43,10 @@ We explored our models using ‘leave-one-out (cross) validation’ to decide wh
 <img src="/state_plot50.png" width="300%"> | <img src="/state_plot51.png" width="300%">  | <img src="/state_plot52.png" width="300%">  |
 
 ### _Model Evaluation_
-Our model presents some significant outliers, including the 
+The probabilistsic model successfully captures the great majority of strong or leaning Democratic and Republican states across the country. Our model presents some significant outliers, including the most striking result of Pres. Trump winning the state of California, while Mr. Biden wins the state of Texas and Florida, two key battleground states with considerable percentages.
 
 ## **Prediction Results**
-We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, 
+We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, in the general sense, our probabilistic model predicts the electoral vote share result quite close to FiveFortyFive's prediction (**Biden:** 346 electoral votes, **Trump:** 192 electoral votes).
 
 ## **Look under the hood**
 Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-5.zip).
