@@ -5,16 +5,20 @@ permalink: /week-5.html
 # **Week 5 - Probability and Electoral Votes**
 #### ***Monday, October 12, 2020***
 
-> "Incumbency adds a layer of advantage on top of this party dominance. But rather than foster an environment in which members of Congress feel free to buck popular sentiment and wrestle seriously with the problems confronting the country, it reinforces the ideological divide between the parties."
-― Thomas E. Mann, Political Scientist
+> "The most important office, and the one which all of us can and should fill, is that of private citizen."
+― Louis Brandeis, Former Associate Justice of the Supreme Court of the United States
 
 ## **Introduction**
 This week, we make a new linear regression prediction model based on the GDP Quarter Growth we saw in Week 2, and the net approval rating for each incumbent party candidate and use those to predict the popular vote share.
 
-## **Election Poll Rankings**
-We wanted to examine how incumbency and the “time for change” attitude of the electorate plays into the popular vote shares for the presidential candidates. Since the presidential candidate is seen as the representative of the party, which adapts its platform to empower their campaign, feelings of anger or wariness regarding the party be can be personified into the presidential nominee. This correlation attitude might affect the candidates of incumbent parties in a negative sense, especially when their own approval ratings are not especially high. Using linear regression, we obtain the following model:
+## **Simulating a distribution of election results**
+The vote total for any particular candidate in any election has a fixed set of
+possible values: 0 − VEP, where VEP is the voter eligible population for the
+election in question. Let’s say we’re interested in the popular vote total for
+Democrat candidates in some state s, DemPVs. Thus, the election outcome for
+Democrats in state s is some draw of voters from the voter-eligible population
+(VEPs) turning out to vote Democrat. We call this process of draws from a population (often called successes from a number of trials) a binomial process.
 
-![equation](/eqw42.png)
 
 ### _Model Evaluation_
 
@@ -53,14 +57,14 @@ We explored our models using ‘leave-one-out (cross) validation’ to decide wh
 ![state](/state_plot49.png) | ![state](/state_plot50.png) | ![state](/state_plot51.png) |
 _ | ![state](/state_plot52.png) | _ |
 
+### _Model Evaluation_
+Our model presents some significant outliers, including the 
 
 ## **Prediction Results**
-We use the FiveThirtyEight data gathered from the recent popularity/unpopularity opinions to predict the average net approval ratings. Mr. Trump has a `-10.6%` disapproval rating, and the GDP growth was recorded using methods presented in Week’s 2 blog. We calculated the following two-party popular vote prediction:
-
-**Biden: `47.99%`, Trump: `52.01%`**
+We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, 
 
 ## **Look under the hood**
-Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week4.zip).
+Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-5.zip).
 
 ## **Onwards**
-As we are looking forward to another week and coming closer to election day, we will keep revising and updating our own election prediction models while critically reviewing other researchers and political scientists' models.
+As we are looking forward to another week and coming closer to election day, we will evaluate the previously defined and fitted election prediction models while critically reviewing other researchers and political scientists' models.
