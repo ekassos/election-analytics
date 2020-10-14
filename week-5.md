@@ -38,24 +38,23 @@ We explored our models using ‘leave-one-out (cross) validation’ to decide wh
 
 1 | 2 | 3 |
 :-------------------------:|:-------------------------:|:-------------------------:
-![state](/state_plot1.png) | ![state](/state_plot2.png) | ![state](/state_plot3.png) |
-![state](/state_plot4.png) | ![state](/state_plot5.png) | ![state](/state_plot6.png) |
-![state](/state_plot7.png) | ![state](/state_plot8.png) | ![state](/state_plot9.png) |
-![state](/state_plot10.png) | ![state](/state_plot11.png) | ![state](/state_plot12.png) |
-![state](/state_plot13.png) | ![state](/state_plot14.png) | ![state](/state_plot15.png) |
-![state](/state_plot16.png) | ![state](/state_plot17.png) | ![state](/state_plot18.png) |
-![state](/state_plot19.png) | ![state](/state_plot20.png) | ![state](/state_plot21.png) |
-![state](/state_plot22.png) | ![state](/state_plot23.png) | ![state](/state_plot24.png) |
-![state](/state_plot25.png) | ![state](/state_plot26.png) | ![state](/state_plot27.png) |
-![state](/state_plot28.png) | ![state](/state_plot29.png) | ![state](/state_plot30.png) |
-![state](/state_plot31.png) | ![state](/state_plot32.png) | ![state](/state_plot33.png) |
-![state](/state_plot34.png) | ![state](/state_plot35.png) | ![state](/state_plot36.png) |
-![state](/state_plot37.png) | ![state](/state_plot38.png) | ![state](/state_plot39.png) |
-![state](/state_plot40.png) | ![state](/state_plot41.png) | ![state](/state_plot42.png) |
-![state](/state_plot43.png) | ![state](/state_plot44.png) | ![state](/state_plot45.png) |
-![state](/state_plot46.png) | ![state](/state_plot47.png) | ![state](/state_plot48.png) |
-![state](/state_plot49.png) | ![state](/state_plot50.png) | ![state](/state_plot51.png) |
-_ | ![state](/state_plot52.png) | _ |
+<img src="/state_plot2.png" width="300%"> | <img src="/state_plot3.png" width="300%">  | <img src="/state_plot4.png" width="300%">  |
+<img src="/state_plot5.png" width="300%"> | <img src="/state_plot6.png" width="300%">  | <img src="/state_plot7.png" width="300%">  |
+<img src="/state_plot8.png" width="300%"> | <img src="/state_plot9.png" width="300%">  | <img src="/state_plot10.png" width="300%">  |
+<img src="/state_plot11.png" width="300%"> | <img src="/state_plot12.png" width="300%">  | <img src="/state_plot13.png" width="300%">  |
+<img src="/state_plot14.png" width="300%"> | <img src="/state_plot15.png" width="300%">  | <img src="/state_plot16.png" width="300%">  |
+<img src="/state_plot17.png" width="300%"> | <img src="/state_plot18.png" width="300%">  | <img src="/state_plot19.png" width="300%">  |
+<img src="/state_plot20.png" width="300%"> | <img src="/state_plot21.png" width="300%">  | <img src="/state_plot22.png" width="300%">  |
+<img src="/state_plot23.png" width="300%"> | <img src="/state_plot24.png" width="300%">  | <img src="/state_plot25.png" width="300%">  |
+<img src="/state_plot26.png" width="300%"> | <img src="/state_plot27.png" width="300%">  | <img src="/state_plot28.png" width="300%">  |
+<img src="/state_plot29.png" width="300%"> | <img src="/state_plot30.png" width="300%">  | <img src="/state_plot31.png" width="300%">  |
+<img src="/state_plot32.png" width="300%"> | <img src="/state_plot33.png" width="300%">  | <img src="/state_plot34.png" width="300%">  |
+<img src="/state_plot35.png" width="300%"> | <img src="/state_plot36.png" width="300%">  | <img src="/state_plot37.png" width="300%">  |
+<img src="/state_plot38.png" width="300%"> | <img src="/state_plot39.png" width="300%">  | <img src="/state_plot40.png" width="300%">  |
+<img src="/state_plot41.png" width="300%"> | <img src="/state_plot42.png" width="300%">  | <img src="/state_plot43.png" width="300%">  |
+<img src="/state_plot44.png" width="300%"> | <img src="/state_plot45.png" width="300%">  | <img src="/state_plot46.png" width="300%">  |
+<img src="/state_plot47.png" width="300%"> | <img src="/state_plot48.png" width="300%">  | <img src="/state_plot49.png" width="300%">  |
+<img src="/state_plot50.png" width="300%"> | <img src="/state_plot51.png" width="300%">  | <img src="/state_plot52.png" width="300%">  |
 
 ### _Model Evaluation_
 Our model presents some significant outliers, including the 
