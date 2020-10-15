@@ -50,7 +50,7 @@ The probabilistic model successfully captures the great majority of strong or le
 We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, in the general sense, our probabilistic model predicts the electoral vote share result quite close to FiveFortyFive’s prediction (**Biden:** 346 electoral votes, **Trump:** 192 electoral votes).
 
 ## **Look under the hood**
-Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-5.zip).
+Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-05.zip).
 
 ## **Onwards**
 As we are looking forward to another week and coming closer to election day, we will evaluate the previously defined and fitted election prediction models while critically reviewing other researchers and political scientists’ models.
