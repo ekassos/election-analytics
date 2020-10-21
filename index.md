@@ -12,4 +12,7 @@ _This week, we make a new prediction model by comparing FiveThirtyEight's electi
 _This week, we make a new linear regression prediction model based on the GDP Quarter Growth we saw in Week 2, and the net approval rating for each incumbent party candidate and use those to predict the popular vote share._
 
 ## [Week 5 - Probability and Electoral Votes](https://ekassos.github.io/election-analytics/week-5.html)
-This week, we take a different approach than the typical linear regression model fitting approach we have been following for the last few weeks. Instead, we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the voter-eligible population (VEP) turning out to vote Democrat, modeled as a binomial process.
+_This week, we take a different approach than the typical linear regression model fitting approach we have been following for the last few weeks. Instead, we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the voter-eligible population (VEP) turning out to vote Democrat, modeled as a binomial process._
+
+## [Week 6 - Considering Turnout](https://ekassos.github.io/election-analytics/week-6.html)
+_This week, we go back to the different approach than the typical linear regression model fitting approach we followed last week. This time, incorporate a turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process._
