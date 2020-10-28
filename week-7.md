@@ -9,7 +9,7 @@ permalink: /week-7.html
 > ~ Former Vice President Joe Biden
 
 ## **Introduction**
-This week, we go back to the different approach than the typical linear regression model fitting approach we followed in the last few weeks. This time, we update our turnout correction in the  we incorporate the turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process.
+This week, we go back to the different approach than the typical linear regression model fitting approach we followed in the last few weeks. This time, we update our turnout correction we created last week by incorporating COVID death rate changes in every state. Then, we calculate the turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process.
 
 ### _Model Implementation_
 
