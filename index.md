@@ -16,3 +16,6 @@ _This week, we take a different approach than the typical linear regression mode
 
 ## [Week 6 - Considering Turnout](https://ekassos.github.io/election-analytics/week-6.html)
 _This week, we go back to the different approach than the typical linear regression model fitting approach we followed last week. This time, incorporate a turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process._
+
+## [Week 6 - Considering Turnout](https://ekassos.github.io/election-analytics/week-7.html)
+_This week, we go back to the different approach than the typical linear regression model fitting approach we followed in the last few weeks. This time, we update our turnout correction in the  we incorporate the turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process._
