@@ -47,4 +47,4 @@ We use the FiveThirtyEight data gathered from the recent popularity/unpopularity
 Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week4.zip).
 
 ## **Onwards**
-As we are looking forward to another week and coming closer to election day, we will keep revising and updating our own election prediction models while critically reviewing other researchers and political scientists' models.
+As we are looking forward to another week and coming closer to Election Day, we will keep revising and updating our own election prediction models while critically reviewing other researchers and political scientists' models.
