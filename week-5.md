@@ -53,4 +53,4 @@ We calculated the following two-party electoral vote prediction: **Biden:** 322 
 Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-05.zip).
 
 ## **Onwards**
-As we are looking forward to another week and coming closer to election day, we will evaluate the previously defined and fitted election prediction models while critically reviewing other researchers and political scientists’ models.
+As we are looking forward to another week and coming closer to Election Day, we will evaluate the previously defined and fitted election prediction models while critically reviewing other researchers and political scientists’ models.
