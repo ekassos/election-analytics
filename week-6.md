@@ -35,7 +35,8 @@ This week, we expand our probabilistic model by incorporating the factor of turn
 * COVID-19 positivity rate: shows us how hard hit the state is by the pandemic. In that case, we assume that voters are more hesitant to show up at the polls for early or Election Day voting, but might prefer to vote by mail.
 
 Therefore, we create the following weighting model for VEP turnout:
-`turnout = turnout_2016 (1 – 0.2 * older_than_65 + 0.3 * mail_in_2016 – 0.1 * COVID_positivity)`. Note that the weights are . In our code, we use 
+`turnout = turnout_2016 (1 – 0.2 * older_than_65 + 0.3 * mail_in_2016 – 0.1 * COVID_positivity)`. Note that the weights are suggestive of the impact we are expecting for each variable.
+
 We generate histograms of Biden's win or loss (if negative) margin in each state. We report the following interesting and note-worthy results:
 
 ![state](/new_state_plot3.png) | ![state](/new_state_plot6.png) |
