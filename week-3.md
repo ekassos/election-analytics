@@ -44,4 +44,4 @@ Using the data provided from the 2020 election polls, and our model formula for 
 Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-3.zip).
 
 ## **Onwards**
-As we are looking forward to another week and coming closer to election day, we will start revising and updating our own election prediction models while critically reviewing other researchers and political scientists' models. 
+As we are looking forward to another week and coming closer to Election Day, we will start revising and updating our own election prediction models while critically reviewing other researchers and political scientists' models. 
