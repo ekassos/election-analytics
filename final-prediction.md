@@ -21,7 +21,7 @@ Our model relies on three different parts:
 
 (c) an ensemble of the two predictions to correct the probabilistic model's uncertainty and tie everything back together to produce the final result.
 
-### Part I: Weighted Poll Rankings
+### Part I: Weighted Poll Results
 
 As we saw in our Week 3 blog, FiveThirtyEight provides poll ratings based on each poll's Predictive Plus-Minus rating, which aims to address the variation between methodological standards score and accuracy differences between each poll and includes a "herding penalty" for pollsters with low methodology ratings. As we get much closer to Election Day and more independent (i.e., unaffiliated) or undecided voters make up their mind, polls become even more accurate in predicting the actual popular vote share. Therefore, we have decided to use the weighted model based on poll ratings to essentially "sort through" all 50 states and determine which ones we should denote as "battleground states" that require further analysis to determine the actual winner.
 
@@ -54,6 +54,21 @@ Finally, the state popular vote share calculated for a specific candidate is:
 Then, we needed to weigh each result to determine our final predicted popular vote share result. For this, we decided to trust the accuracy of the polls close to Election Day, and weighted the poll ranking model a little more compared to the decay model (`0.6 vs 0.4`), to get the following final model for the state popular vote share calculated for a specific candidate:
 
 ![eq](/fin_eq4.png)
+
+At this time, we identified the following 7 "battleground" states that had a candidate popular vote margin less than six percentage points: Arizona, Florida, Georgia, Iowa, Nevada, North Carolina, Ohio, Pennsylvania, and Texas. We chose the six percentage point benchmark, as we wanted to limit the number of "battleground" states, but also did not want to rely entirely on the polls model where the margin of victory was quite slim. The following table presents the popular vote share predictions and the absolute difference between the two candidates:
+
+State | Democratic Popular Vote Share | Republican Popular Vote Share | Absolute Difference (Win Margin)|
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+Arizona	| 49.53	| 45.60 |	3.93 |
+Florida	|48.89|	46.77|2.13|
+Georgia	|48.97	|46.88	|2.09|
+Iowa	|47.42|	47.96	|0.54
+Nevada|	50.29	|45.66|	4.63
+North Carolina|	49.35	|46.52	|2.84
+Ohio|	47.16|	48.65|	1.49
+Pennsylvania	|50.78	|44.90	|5.88
+Texas	|47.15	|48.67	|1.52
+
 
 ## **Prediction Results**
 We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, in the general sense, our probabilistic model predicts the electoral vote share result quite close to FiveThirtyEight’s prediction (**Biden:** 346 electoral votes, **Trump:** 192 electoral votes).
