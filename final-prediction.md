@@ -69,6 +69,25 @@ Ohio|	47.16|	48.65|	1.49
 Pennsylvania	|50.78	|44.90	|5.88
 Texas	|47.15	|48.67	|1.52
 
+### Part II: Turnout Prediction and Binomial Processes 
+
+To determine our final prediction for those seven battleground states, we turn to the turnout prediction and probabilistic models we implemented in the last few weeks.
+
+The vote total for any particular candidate in the presidential election has a fixed set of possible values: 0 − VEP, where VEP is the voter eligible population for the presidential election in question. Let's say we're interested in the popular vote total for the Democratic nominee in some state s. Thus, the election outcome for Democrats in state s is some draw of voters from the voter-eligible population (VEPs) turning out to vote Democrat. We call this process of draws from a population (often called successes from a number of trials) a binomial process.
+
+The core probabilistic phenomena driving a binomial process is whether or not a single voter, denoted by i, will turn out and vote for the party in question. Let's call this individual voter probability in state s. The question we can ask is: what, then, is the probability of n voters voting for the Democratic presidential nominee in this state? It turns out that this question can be answered by setting up a distribution that follows the Binomial distribution.
+
+To improve our probabilistic model, and account for any model outliers, instead of a calculating the probability for a single Democratic voter showing up to the polls and voting for the Democratic presidential nominee, or the single expected number of Democratic voters from the population, we predict a distribution of Democratic voter draws from the respective binomial process on that population.
+
+We simulate draws from 100,000 repeated Binomial process with a population of size VEP and a draw probability of predicted draw probabilities for Democrats and Republicans based on the binomial distribution model, derived from previous election cycles. Finally, we are simulating a distribution of election results, specifically calculating Biden's win or loss (if negative) margin in each state, and then attributing the electoral votes of each state to the winner of that state. Note: absent specific polling results of each of the electoral districts in Maine and Nebraska, we assume that the general state vote will reflect on the distribution of those electoral votes and follow the usual "winner takes all" electoral college vote distribution model.
+
+To make our model more accurate, we expand our probabilistic model by incorporating the factor of turnout. Rather than fixing each state’s maximum number of Binomial draws to the state’s VEP, we draw a random number from a distribution constructed using VEP and our guess on the effect of COVID and vote-by-mail). To do so, we employ the following statistics:
+
+* percentage of people that are older than 65 years old: we expect that this age group is more prone to COVID-19, but less accustomed to vote by mail. Therefore, they more likely to vote in person or be hesitant to turn out to vote. The model attaches the weight `-0.2` account for a significant, but not overwhelming effect, as we assume that a considerable number of elderly will still show up at the polls.
+* number of COVID-19 cases per 100 thousand state residents: we assume that a high COVID-19 case number will deter voters from voting in-person, especially when they are not accustomed to early or absentee voting. We give a coefficient of `-0.3`, as we expect this to affect the whole voting-eligible population and not just older voters. Moreover, we expect that in the extreme case of 200 COVID-19 cases per 100 thousand state residents, the state will be on high alert, and the voting will be significantly affected, so we divide by the case number by 200.
+* percentage of the VEP that has already voted early (either in-person or by absentee ballot): shows us which states are on track to become gross mail-in or early voting states. In that case, we assume that people are more accustomed to the process, or COVID-19 has urged more people to vote early.  The model attributes the coefficient of `0.4`, as we expect early voting to be an efficient way for voting this year, signaled by the monumental early voting turnout rates, and we add the case rate described above to account for the increase in early voting numbers by the increase in COVID-19 positivity rates. The final turnout model is described below:
+
+`turnout = turnout_2016 * (1 - 0.2 * df$older_than_65 + 0.4 * (total_early_rates + 7day_COVID-19_cases_100K/200)- 0.3 * 7day_COVID-19_cases_100K/200)`
 
 ## **Prediction Results**
 We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, in the general sense, our probabilistic model predicts the electoral vote share result quite close to FiveThirtyEight’s prediction (**Biden:** 346 electoral votes, **Trump:** 192 electoral votes).
