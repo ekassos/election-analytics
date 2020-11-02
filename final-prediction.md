@@ -9,29 +9,34 @@ permalink: /final-prediction.html
 > ~ Scholastic philosopher William of Ockham
 
 ## **Introduction**
-This week, we go back to the different approach than the typical linear regression model fitting approach we followed in the last few weeks. This time, we update our turnout correction we created last week by incorporating COVID death rate changes in every state. Then, we calculate the turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process.
+The election is right around the corner, and we are ready to make our final prediction for the 2020 General Presidential Election. This time we use a three-step model to grapple with the idiosyncrasies of each state. Using our model, we determine the popular vote winner in each state, along with the winner of the Electoral College vote.
 
-### _Model Implementation_
+## Model Idiation and Walkthrough
 
-Let’s go back to our model expansion from last week:
-> This week, we expand our probabilistic model by incorporating the factor of turnout. Rather than fixing each state’s maximum number of Binomial draws to the state’s VEP, we draw a random number from a distribution constructed using VEP and our guess on the effect of COVID and vote-by-mail). To do so, we incorporate the following statistics: 
-> * percentage of people that are older than 65 years old: more prone to COVID 19, but less accustomed to vote by mail. Therefore, they more likely to vote in person or be hesitant to turn out to vote.
-> * percentage of mail in votes in the last general state-wide election: shows us which states are usually gross mail-in states. In that case, we assume that people are more accustomed to the process.
-> * COVID-19 positivity rate: shows us how hard hit the state is by the pandemic. In that case, we assume that voters are more hesitant to show up at the polls for early or Election Day voting, but might prefer to vote by mail.
+Our model relies on three different parts:
 
-To further develop our model, we replace the COVID-19 positivity rate, with the weekly average of 
+(a) an initial prediction of candidates' popular vote share based on a weighted model of poll ranking and a decay-over-time effect for each poll's impact on the final result,
 
-Therefore, we update the following weighting model for VEP turnout:
-`turnout = turnout_2016 (1 – 0.2 * older_than_65 + 0.4 * mail_in_2016 – 0.3 * COVID_deaths)`. Note that the weights are created based on a “hierarchy” notion that COVID deaths will desensitize all voters more than the age concern for older people, while mail-in voting will provide an easy solution for the population portion that is hesitant to show up to the polls on Election Day, or vote early. 
+(b) a probabilistic model that predicts the popular vote share using turnout estimates based on the age of the population, the popularity of mail-in and early voting, and the COVID-19 spread in the state, and
 
-We generate histograms of Biden's win or loss (if negative) margin in each state. We report the following interesting and note-worthy results:
+(c) an ensemble of the two predictions to correct the probabilistic model's uncertainty and tie everything back together to produce the final result.
 
-![state](/finalstate_plot3.png) | ![state](/finalstate_plot11.png) |
-:-------------------------:|:-------------------------:|
-![state](/finalstate_plot13.png) | ![state](/finalstate_plot40.png) |
+### Part I: Weighted Poll Rankings
 
-### _Model Evaluation_
-The probabilistic model successfully captures the great majority of strong or leaning Democratic and Republican states across the country. Our model presents some significant outliers, including the most striking result of Pres. Trump winning the state of California once again, while Mr. Biden wins the state of Texas, Pennsylvania and Florida, three key battleground states with considerable percentages. Also, we observe very polarized results in Alaska and the District of Columbia. However, we are delighted to see some larger variance in the popular vote share win or lose margin in many states, meaning that our adjustments worked!
+As we saw in our Week 3 blog, FiveThirtyEight provides poll ratings based on each poll's Predictive Plus-Minus rating, which aims to address the variation between methodological standards score and accuracy differences between each poll and includes a "herding penalty" for pollsters with low methodology ratings. As we get much closer to Election Day and more independent (i.e., unaffiliated) or undecided voters make up their mind, polls become even more accurate in predicting the actual popular vote share. Therefore, we have decided to use the weighted model based on poll ratings to essentially "sort through" all 50 states and determine which ones we should denote as "battleground states" that require further analysis to determine the actual winner.
+
+As we saw in our Week 3 blog, FiveThirtyEight provides poll ratings based on each poll's Predictive Plus-Minus rating, which aims to address the variation between methodological standards score and accuracy differences between each poll and includes a "herding penalty" for pollsters with low methodology ratings. As we get much closer to Election Day and more independent (i.e., unaffiliated) or undecided voters make up their mind, polls become even more accurate in predicting the actual popular vote share. Therefore, we have decided to use the weighted model based on poll ratings to essentially "sort through" all 50 states and determine which ones we should denote as "battleground states" that require further analysis to determine the actual winner.
+
+Our model uses the poll weighting method described below. For each of the poll ratings, we use the following scoring function, where x represents each one of the poll results:
+![equation](/equation.png)
+
+We chose the specific grading scheme, resembling that of a course grading scale, because as we saw in Week 3, and shown in the graph below, where we obtained by analyzing the distribution of letter poll ratings that FiveThirtyEight provides based on each poll's Predictive Plus-Minus rating, there is a large number of polls that are rated B/C, and a few rated higher or lower. Therefore, a 2.5/4 score for a B/C-rated poll constitutes an average score, meaning that our model "awards" polls of higher quality and almost disregards low-scoring polls, as expected. To normalize all election poll results and calculate the "contribution" of each result to the final calculated popular vote share of a candidate, we divide each score over the sum of all poll scores and then multiply it with the actual poll-predicted state popular vote share:
+
+![eq](/eq.png)
+
+Finally, the state popular vote share calculated for a specific candidate is:
+
+![eq](/eq2.png)
 
 ## **Prediction Results**
 We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, in the general sense, our probabilistic model predicts the electoral vote share result quite close to FiveThirtyEight’s prediction (**Biden:** 346 electoral votes, **Trump:** 192 electoral votes).
