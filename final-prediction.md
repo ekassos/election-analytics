@@ -89,11 +89,56 @@ To make our model more accurate, we expand our probabilistic model by incorporat
 
 `turnout = turnout_2016 * (1 - 0.2 * df$older_than_65 + 0.4 * (total_early_rates + 7day_COVID-19_cases_100K/200)- 0.3 * 7day_COVID-19_cases_100K/200)`
 
+For a final fix of accuracy, we set the standard deviation of the probabilistic general VEP prediction to 0.02 and the standard deviation of the probabilistic voter turnout prediction to 0.01, as we assume that our uncertainty for the turnout calculations will be higher than the uncertainty of polls so close to Election Day.
+
+We generate histograms of Biden's win or loss (if negative) margin in each state. We report the following exciting and note-worthy results for the nine battleground states to let the reader understand the incentive to follow the approach in part III:
+
+![AZ](/AZ_f.png) | ![FL](/FL_f.png) | ![GA](/GA_f.png) 
+:-------------------------:|:-------------------------:|:-------------------------:
+![IA](/IA_f.png) | ![NV](/NV_f.png) | ![NC](/NC_f.png) 
+![OH](/OH_f.png) | ![PA](/PA_f.png) | ![TX](/TX_f.png) 
+
+### Part III: Model Correction Using Ensamble
+
+As we see in the popular vote winning margins graphs above, in many of these battleground states, which are supposed to be too close to call, the winning margins are double digits, with the popular vote winning margins being highly polarized or having a sizeable possible value and uncertainty interval. To correct for that, we create an ensemble model combining the two models: the poll ranking (denoted by `rank(x)`) and the probabilistic and turnout model (denoted by `prob(x)`) to reach the final model (denoted by `final(x)`) for each battleground state `x`:
+
+![eq](/fin_eq5.png)
+
+We spent a long time trying to find the best coefficients for `w1` and `w2`. However, a guiding principle was that we should give high importance to the well-established model of poll rankings and then incorporate Election Day's unpredictability using the second model. Therefore, we decided on the following two sets of coefficients: `w1 = 0.8, w2=0.2` and `w1 = 0.7, w2=0.3` that achieve that effect. 
+
+## **Uncertainty Around Prediction and Reflection**
+Using the two models (let's call them conservative and explorational, as they give different weight to the poll averages), we calculate the results for each of the nine battleground states. We get the following map for the conservative model:
+
+![pic](/name1.png)
+
+We can see that the closest race is that of Ohio, with Former Vice President Biden winning the state with a 0.10% mean voting margin (the prediction interval in the graph above is about 12 percentage points). However, mind the short legend color scheme when considering how polarized the other winning margins are. When we test for the explorational model, we get the following map for the nine battleground states:
+
+![pic](/name3.png)
+
+We observe that most states remain on the same party's winning list, while some states increase their winning margins. However, Ohio is now won by President Trump with a 0.60% mean voting margin (as mentioned before, the prediction interval in the graph above is about 12 percentage points). 
+
+It is hard to define a national popular vote share and its respective uncertainty interval, based on our state results, and we believe that a national popular vote share is misleading for many audiences in determining the winner of the election. Finally, we chose not to integrate the successful 3rd Quarter GDP model that we developed in Week 2 because the American economy has significantly improved in the last few months. Still, we do not believe that the economy is one of the most important issues that concern voters per se, as shown in recent opinion polls, and the economy was not one of the main standalone topics in the presidential debates. 
+
+Our probabilistic model that incorporates the turnout prediction does not allow for in-sample or out-of-sample validation, as we do not have previous presidential elections affected by COVID-19 to fit and compare to. Some future studies on the effects of turnout by COVID-19 in the primaries to perform model validation might be an exciting and rewarding project. We see that there are large uncertainty intervals in the winning margin distributions of the binomial trials. Nonetheless, we observe that, in most cases, the most significant portion of the distribution curve lies on one candidate's side, making us less concerned about the possibility of a highly inaccurate result. This conclusion is also justified by many states' curves being strongly polarized (i.e., lying in a high winning margin region).
+
 ## **Prediction Results**
-We calculated the following two-party electoral vote prediction: **Biden:** 322 electoral votes, **Trump:** 216 electoral votes. As we mentioned above, the prediction interval among individual states might not match that of reality, however, in the general sense, our probabilistic model predicts the electoral vote share result quite close to FiveThirtyEight’s prediction (**Biden:** 346 electoral votes, **Trump:** 192 electoral votes).
+This is the moment we have been waiting for. We have the following two U.S. winning margin graphs based on our conservative and explorative models:
+
+![pic](/name.png)
+
+![pic](/name2.png)
+
+For simplicity and clarity, we report the following Electoral College vote counts based on our two models:
+
+Model | Democratic Electoral College vote count | Republican Electoral College vote count
+:-------------------------:|:-------------------------:|:-------------------------:
+Conservative | 311 | 226
+Explorative | 308 | 229
+
+In the general sense, our model predicts the electoral vote share result quite close to FiveThirtyEight’s Biden win prediction, a little more conservatively nonetheless (**Biden:** 348 electoral votes, **Trump:** 190 electoral votes).
 
 ## **Look under the hood**
-Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-07.zip).
+Feel free to test out our model using the R code and datasets, conveniently uploaded in a [ZIP file](/week-07.zip) and our R Script [here](/Final-Prediction-Script.R).
 
 ## **Onwards**
 As we are finally coming closer to election day, we will evaluate the election prediction model while critically reviewing other researchers and political scientists’ models.
