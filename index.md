@@ -20,5 +20,8 @@ _This week, we go back to the different approach than the typical linear regress
 ## [Week 7 - Considering Turnout Vol. II](https://ekassos.github.io/election-analytics/week-7.html)
 _This week, we go back to the different approach than the typical linear regression model fitting approach we followed in the last few weeks. This time, we update our turnout correction we created last week by incorporating COVID death rate changes in every state. Then, we calculate the turnout correction for the voter-eligible population (VEP) and then we employ Binomial logistic regression and think of the election outcome for Democrats as a finite draw of voters from the VEP turning out to vote Democrat, modeled as a binomial process._
 
-## [**Final Election Prediction - It all comes down to this**](https://ekassos.github.io/election-analytics/final-prediction.html)
+## [**Final Election Prediction**](https://ekassos.github.io/election-analytics/final-prediction.html)
 _The election is right around the corner, and we are ready to make our final prediction for the 2020 General Presidential Election. This time we use a three-step model to grapple with the idiosyncrasies of each state. Using our model, we determine the popular vote winner in each state, along with the winner of the Electoral College vote._
+
+## [**Final Election Prediction Reflection**](https://ekassos.github.io/election-analytics/reflection.html)
+_Almost twenty days have passed since Election day, a President-Elect has been called by most networks and the Associated Press, and the country is finally moving on. However, we are taking the time to evaluate our model, understand its shortcomings and propose ways to further develop it for use in future elections._
