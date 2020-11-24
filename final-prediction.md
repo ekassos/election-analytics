@@ -11,7 +11,7 @@ permalink: /final-prediction.html
 ## **Introduction**
 The election is right around the corner, and we are ready to make our final prediction for the 2020 General Presidential Election. This time we use a three-step model to grapple with the idiosyncrasies of each state. Using our model, we determine the popular vote winner in each state, along with the winner of the Electoral College vote.
 
-## Model Idiation and Walkthrough
+## Model Ideation and Walkthrough
 
 Our model relies on three different parts:
 
