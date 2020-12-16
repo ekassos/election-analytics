@@ -25,3 +25,6 @@ _The election is right around the corner, and we are ready to make our final pre
 
 ## [**Final Election Prediction Reflection**](https://ekassos.github.io/election-analytics/reflection.html)
 _Almost twenty days have passed since Election day, a President-Elect has been called by most networks and the Associated Press, and the country is finally moving on. However, we are taking the time to evaluate our model, understand its shortcomings and propose ways to further develop it for use in future elections._
+
+## [**Election Narrative Analysis**](https://ekassos.github.io/election-analytics/narrative.html)
+_This final week, as states around country certifies the final election results, we move past the analysis of our predictive model, and grapple with narratives presented by media and election analysts. In particular, we formulate a narrative about “nationalized” elections and test out county-level data to understand if this narrative warrants further investigation._
